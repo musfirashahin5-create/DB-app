@@ -1,0 +1,227 @@
+/* RESET & GLOBALS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+/* MAIN CONTAINER FOR EACH PAGE */
+.page-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ❤️ HEART SPLASH ANIMATION PAGE */
+.heart-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  position: relative;
+}
+
+.heart {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  background: red;
+  transform: rotate(-45deg);
+  animation: heartbeat 1s infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart:before {
+  top: -75px;
+  left: 0;
+}
+
+.heart:after {
+  left: 75px;
+  top: 0;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1) rotate(-45deg); }
+  50% { transform: scale(1.2) rotate(-45deg); }
+  100% { transform: scale(1) rotate(-45deg); }
+}
+
+/* 🎉 FRONT WISH PAGE */
+.front-page {
+  text-align: center;
+  color: white;
+  animation: fadeIn 2s ease-in-out;
+  padding: 20px;
+}
+
+.front-title {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.front-sub {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 🎂 CAKE PAGE */
+.cake-page {
+  text-align: center;
+  color: white;
+}
+
+.cake-img {
+  width: 300px;
+  max-width: 90%;
+}
+
+.candle-img {
+  width: 80px;
+  margin-top: -120px;
+}
+
+.cake-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  background: #ff6b81;
+  color: white;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* 🖼 IMAGE GALLERY PAGE */
+.gallery-container {
+  color: white;
+  text-align: center;
+}
+
+.gallery-img {
+  width: 90%;
+  max-width: 350px;
+  border-radius: 12px;
+  animation: slideUp 0.8s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.next-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: teal;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* 🎥 VIDEO PAGE */
+.video-page video {
+  width: 90%;
+  max-width: 700px;
+  border-radius: 14px;
+}
+
+/* ✨ ANIMATED PICS PAGE */
+.animated-pic {
+  width: 90%;
+  max-width: 350px;
+  border-radius: 12px;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 💌 FINAL WISHES PAGE */
+.final-page {
+  color: white;
+  padding: 30px;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .front-title {
+    font-size: 2.8rem;
+  }
+
+  .front-sub {
+    font-size: 1.2rem;
+  }
+
+  .cake-img {
+    width: 240px;
+  }
+
+  .animated-pic {
+    max-width: 300px;
+  }
+
+  .final-page {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .front-title {
+    font-size: 2rem;
+  }
+
+  .front-sub {
+    font-size: 1rem;
+  }
+
+  .cake-img {
+    width: 200px;
+  }
+
+  .gallery-img {
+    max-width: 280px;
+  }
+}
